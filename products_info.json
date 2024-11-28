@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "name": "Airelle",
+      "description": "A magnetic air freshener to liven the air in the malodorous gym locker rooms.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 9,
+      "amount_available_to_individual": 2
+    },
+    {
+      "name": "Fidget Fusion",
+      "description": "Our product is a fidget bracelet that will help you focus by giving you encouraging messages. We also have a Pom Pom variant that caters towards your sensory needs.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 1.5,
+      "amount_available_to_individual": 12
+    },
+    {
+      "name": "Hold20",
+      "description": "A water bottle holder with a clamp that latches onto tables of different sizes.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 6,
+      "amount_available_to_individual": 3
+    },
+    {
+      "name": "Lanyard Link",
+      "description": "A magnetic case with double magnets and adhesive, for people to put their lanyards in a spot they always go to, to not lose them.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 4.5,
+      "amount_available_to_individual": 4
+    },
+    {
+      "name": "The Bye-Bye Bait",
+      "description": "This product is a major solution to fish being harmed from different chemicals. The Bye - Bye Bait is made from decomposable materials and when lost in the water, it doesn’t release harmful chemicals that hurt the fish.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 1.2,
+      "amount_available_to_individual": 15
+    },
+    {
+      "name": "The Homework Pin",
+      "description": "Our product is a pin that has letters to correspond with subjects and you can have 2 customizable colors for the letter and the background you pin it your lanyard or clothes so you feel the reminder and do your homework.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 1.5,
+      "amount_available_to_individual": 12
+    },
+    {
+      "name": "Sports Stuff Storage",
+      "description": "It’s a closet that’ll be locked up. In this closet there will be multiple bins that the customer will put their name on and store their belongings. The students will be able to access their belongings before school, after school, and at lunch. Each box will also have felt to make the moisture from their belongings not make other boxes or items wet.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 9,
+      "amount_available_to_individual": 2
+    },
+    {
+      "name": "The Calming Cube",
+      "description": "Our products name is The Calming Cube. Description: our product is a fidget that is shaped as a cube that will help you focus while you are no distracting the people around! It is also customizable and caters to your need to focus while not making any noise!",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 2.25,
+      "amount_available_to_individual": 8
+    },
+    {
+      "name": "Fidget Frank",
+      "description": "We help students focus in class by fidgeting with a hot glued Sensory Toy. Frank has other sensory features like a pipe cleaner on its arm and a squishy chest to help you focus effectively.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 2,
+      "amount_available_to_individual": 9
+    },
+    {
+      "name": "The Unsnagger",
+      "description": "Our product is a helpful device for fishermen to save money, and stop pollution. Our device allows simple retrieval of your fishing line.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 3,
+      "amount_available_to_individual": 6
+    },
+    {
+      "name": "The Easy Attach",
+      "description": "Our company name is EasyAttach. Our product allows consumers to be more free of mess, being able to hang backpacks or binders on a small, portable item, known as the EasyAttach. This relieves customers of dirty equipment, messy workspaces, and most importantly, cluttered workspaces.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 2,
+      "amount_available_to_individual": 9
+    },
+    {
+      "name": "The Senko Saver",
+      "description": "Our product is the first fishing lure to be made by recycling old ones. This lure is made to look like a worm, and this will catch fish, and our specific product will be quality and won’t break down easily.",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 3,
+      "amount_available_to_individual": 6
+    },
+    {
+      "name": "The Space Saver",
+      "description": "N/A",
+      "logo_path": "",
+      "photos_paths": [],
+      "price": 0,
+      "amount_available_to_individual": 0
+    }
+  ]
+}

@@ -1,10 +1,7 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  name: {
-    type: mongoose.Schema.Types.UUID,
-    required: true,
-  },
+  _id: String,
   balance: {
     type: mongoose.Types.Decimal128,
     required: true,
@@ -12,9 +9,9 @@ const UserSchema = new mongoose.Schema({
   },
   products_bought: {
     products: [String],
-    inventory: [Number],
+    inventory: [],
   },
 });
 
-const UserModel = mongoose.model("Users", UserSchema);
+const UserModel = mongoose.model("Users", UserSchema, "Users");
 module.exports = UserModel;
