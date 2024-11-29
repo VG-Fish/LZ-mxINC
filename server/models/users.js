@@ -14,11 +14,8 @@ const UserSchema = new mongoose.Schema({
   },
   inventory: {
     type: [Number],
-    default: Array(13)
-      .fill(0)
-      .map((_, index) => {
-        return products[index].amount_available_to_individual;
-      }),
+    default: () =>
+      products.map((product) => product.amount_available_to_individual),
   },
 });
 

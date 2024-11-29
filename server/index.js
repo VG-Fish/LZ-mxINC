@@ -3,15 +3,23 @@ const app = express();
 const mongoose = require("mongoose");
 const UserModel = require("./models/users");
 const cors = require("cors");
-const products = require("../products_info.json").products;
+const productsInfo = require("../products_info.json").products;
 require("dotenv").config({ path: "./config.env" });
 
 app.use(express.json()); // makes `request.body` work.
 app.use(cors());
 
-mongoose.connect(process.env.ATLAS_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+const connect = () => {
+  mongoose.connect(process.env.ATLAS_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+};
+
+connect();
+mongoose.connection.on("disconnected", () => {
+  console.log("MongoDB disconnected. Retrying...");
+  connect();
 });
 
 app.get("/getUsers", async (_, response) => {
@@ -38,7 +46,7 @@ app.post("/createUser", async (request, response) => {
   try {
     const user = request.body;
     const newUser = new UserModel(user);
-    await newUser.save().catch((error) => {
+    const createdUser = await newUser.save({ isNew: true }).catch((error) => {
       if (error.code === 11000) {
         throw new UserExistsError("User already exists.");
       } else {
@@ -46,7 +54,7 @@ app.post("/createUser", async (request, response) => {
       }
     });
 
-    response.status(201).json(user);
+    response.status(201).json(createdUser);
   } catch (error) {
     switch (error.name) {
       case "UserExistsError":
@@ -84,43 +92,43 @@ app.put("/updateUser", async (request, response) => {
     const requestedProduct = user.product;
     const requestedAmount = user.amount;
 
-    const userData = UserModel.findById(user.email, (error, document) => {
-      if (error) {
-        throw error;
-      }
-      return document;
-    });
+    const userData = await UserModel.findOne({ email: user.email });
+    if (!userData) {
+      return response.status(404).json({ message: "User not found." });
+    }
 
-    const productDetails = products.find(
+    const productIndex = productsInfo.findIndex(
       (product) => product.name === requestedProduct
     );
-    const productIndex = products.indexOf(requestedProduct);
+    if (productIndex === -1) {
+      return response.status(404).json({ message: "Product not found." });
+    }
 
-    // Check if user has enough 'space' to buy the product.
-    const userInventory = userData.get("inventory");
+    const productDetails = productsInfo[productIndex];
+
+    // Check if user has enough inventory.
+    const userInventory = userData.inventory;
     const amountUserCanBuy = userInventory[productIndex];
     if (requestedAmount > amountUserCanBuy) {
-      throw new InsufficientInventoryError();
+      throw new InsufficientInventoryError("Not enough inventory available.");
     }
 
-    // Check is balance is enough.
-    const userBalance = userData.get("balance");
-    if (productDetails.price * requestedAmount > userBalance) {
-      throw new InsufficientBalanceError();
+    // Check if balance is enough.
+    const userBalance = parseFloat(userData.balance.toString());
+    const totalCost = productDetails.price * requestedAmount;
+    if (totalCost > userBalance) {
+      throw new InsufficientBalanceError("Insufficient balance.");
     }
 
-    // User can buy the product now.
-    const updatedUser = await UserModel.updateOne(
-      { email: user.email },
-      {
-        $set: {
-          [`inventory.${productIndex}`]: amountUserCanBuy - requestedAmount,
-          balance: userBalance - productDetails.price * requestedAmount,
-        },
-      }
+    // Update user's balance and inventory.
+    userInventory[productIndex] -= requestedAmount;
+    userData.balance = mongoose.Types.Decimal128.fromString(
+      (userBalance - totalCost).toString()
     );
 
-    response.status(201).json(updatedUser);
+    await userData.save();
+
+    response.status(201).json(userData);
   } catch (error) {
     switch (error.name) {
       case "InsufficientBalanceError":
@@ -137,13 +145,13 @@ app.put("/updateUser", async (request, response) => {
         break;
       default:
         response.status(500).json({
-          message: "Error occurred while updating a user.",
+          message: "Error occurred while updating user.",
           error: error.message,
         });
     }
   }
 });
 
-app.listen(3001, () => {
-  console.log("Server runs.");
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Server running on port ${process.env.PORT || 3001}`);
 });
