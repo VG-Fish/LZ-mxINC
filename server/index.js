@@ -48,7 +48,7 @@ app.post("/createUser", async (request, response) => {
   }
 });
 
-app.put("/updateUser/:id", async (request, response) => {
+app.put("/updateUser/:id?product={}", async (request, response) => {
   try {
     const user = request.body;
     const product = user.product;

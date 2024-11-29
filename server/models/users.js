@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const products = require("../../products_info.json").products;
 
 const UserSchema = new mongoose.Schema({
   _id: String,
@@ -9,7 +10,11 @@ const UserSchema = new mongoose.Schema({
   },
   products_bought: {
     products: [String],
-    inventory: [],
+    inventory: Array(13)
+      .fill(0)
+      .map((_, index) => {
+        return products[index].amount_available_to_individual;
+      }),
   },
 });
 
