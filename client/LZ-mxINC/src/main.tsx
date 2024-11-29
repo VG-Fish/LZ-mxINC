@@ -4,11 +4,12 @@ import "./index.css";
 import App from "./App.tsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Store from "./components/Store.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   // placeholder
-  { path: "/store", element: <App /> },
+  { path: "/store", element: <Store /> },
 ]);
 
 createRoot(document.getElementById("root")!).render(
