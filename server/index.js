@@ -79,6 +79,7 @@ class InsufficientBalanceError extends Error {
   }
 }
 
+// For the `app.put()` method.
 class InsufficientInventoryError extends Error {
   constructor(message) {
     super(message);
