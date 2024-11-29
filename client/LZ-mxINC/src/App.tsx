@@ -1,9 +1,16 @@
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
+import { JwtPayload, jwtDecode } from "jwt-decode";
 
 const App = () => {
   const onSuccess = (credentialResponse: CredentialResponse) => {
-    console.log(jwtDecode(credentialResponse.credential ?? ""));
+    const user: JwtPayload & { email: string } = jwtDecode(
+      credentialResponse.credential ?? ""
+    );
+    const email = user.email;
+    const org = email.split("@")[1];
+    if (["lz95.org", "lz95.net"].indexOf(org) !== -1) {
+      // Go to next page
+    }
   };
 
   const onError = () => {
