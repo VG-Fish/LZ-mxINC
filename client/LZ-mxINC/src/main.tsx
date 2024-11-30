@@ -8,7 +8,6 @@ import Store from "./components/Store.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
-  // placeholder
   { path: "/store", element: <Store /> },
 ]);
 
