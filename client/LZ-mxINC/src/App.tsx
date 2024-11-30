@@ -15,8 +15,11 @@ const App = () => {
     const email = user.email;
     const org = email.split("@")[1];
     if (["lz95.org", "lz95.net"].indexOf(org) !== -1) {
-      // Todo
+      // TODO: finish logic here.
       navigator("/store");
+    } else {
+      setErrorMessage("Cannot login.");
+      setLoginError(true);
     }
   };
 
