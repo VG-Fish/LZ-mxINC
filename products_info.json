@@ -24,8 +24,8 @@
       "description": "A water bottle holder with a clamp that latches onto tables of different sizes.",
       "logo_path": "LZ-mxINC/LZ-mxINC/company_logos/Hold20 Logo.png",
       "photos_paths": [
-        "LZ-mxINC/company_pictures/Fidget Fusion 1.png",
-        "LZ-mxINC/company_pictures/Fidget Fusion 2.png"
+        "../assets/company_pictures/Hold20 1.png",
+        "../assets/company_pictures/Hold20 2.png"
       ],
       "price": 6,
       "amount_available_to_individual": 3
@@ -33,11 +33,8 @@
     {
       "name": "Lanyard Link",
       "description": "A magnetic case with double magnets and adhesive, for people to put their lanyards in a spot they always go to, to not lose them.",
-      "logo_path": "LZ-mxINC/company_logos/Lanyard Link Logo.png",
-      "photos_paths": [
-        "LZ-mxINC/company_pictures/Hold20 1.png",
-        "LZ-mxINC/company_pictures/Hold20 2.png"
-      ],
+      "logo_path": "../assets/company_logos/Lanyard Link Logo.png",
+      "photos_paths": ["../assets/company_pictures/Lanyard Link 1.png"],
       "price": 4.5,
       "amount_available_to_individual": 4
     },
@@ -103,11 +100,8 @@
     {
       "name": "The Senko Saver",
       "description": "Our product is the first fishing lure to be made by recycling old ones. This lure is made to look like a worm, and this will catch fish, and our specific product will be quality and won’t break down easily.",
-      "logo_path": "LZ-mxINC/company_logos/The Senko Saver Logo.png",
-      "photos_paths": [
-        "LZ-mxINC/company_pictures/The Unsnagger 1.png",
-        "LZ-mxINC/company_pictures/The Unsnagger 2.png"
-      ],
+      "logo_path": "../assets/company_logos/The Senko Saver Logo.png",
+      "photos_paths": ["../assets/company_pictures/The Senko Saver 1.png"],
       "price": 3,
       "amount_available_to_individual": 6
     },
