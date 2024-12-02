@@ -1,5 +1,11 @@
+import Cards from "./Cards";
+
 const Store = () => {
-  return <p>test.</p>;
+  return (
+    <>
+      <Cards></Cards>
+    </>
+  );
 };
 
 export default Store;
