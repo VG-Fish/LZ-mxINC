@@ -32,9 +32,18 @@ const App = () => {
 
   return (
     <>
-      <Store></Store>
+      <div className="text-center">
+        Welcome to <b>LZ-mxINC</b>
+        <br></br>
+        Please sign in below
+      </div>
       {loginErrored && <div>{errorMessage}</div>}
-      <GoogleLogin onSuccess={onSuccess} onError={onError}></GoogleLogin>
+      <div className="d-flex justify-content-center align-items-center">
+        <div style={{ width: "300px" }}>
+          <GoogleLogin onSuccess={onSuccess} onError={onError}></GoogleLogin>
+        </div>
+      </div>
+      <Store></Store>
     </>
   );
 };
