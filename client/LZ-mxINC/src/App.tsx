@@ -2,6 +2,8 @@ import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { JwtPayload, jwtDecode } from "jwt-decode";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Store from "./components/Store";
+import "bootstrap/dist/css/bootstrap.css";
 
 const App = () => {
   const navigator = useNavigate();
@@ -30,8 +32,18 @@ const App = () => {
 
   return (
     <>
+      <div className="text-center">
+        Welcome to <b>LZ-mxINC</b>
+        <br></br>
+        Please sign in below
+      </div>
       {loginErrored && <div>{errorMessage}</div>}
-      <GoogleLogin onSuccess={onSuccess} onError={onError}></GoogleLogin>
+      <div className="d-flex justify-content-center align-items-center">
+        <div style={{ width: "300px" }}>
+          <GoogleLogin onSuccess={onSuccess} onError={onError}></GoogleLogin>
+        </div>
+      </div>
+      <Store></Store>
     </>
   );
 };
