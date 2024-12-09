@@ -2,10 +2,14 @@ const mongoose = require("mongoose");
 const products = require("../../products_info.json").products;
 
 const UserSchema = new mongoose.Schema({
-  email: {
-    type: String,
+  id: {
+    type: Number,
     required: true,
     unique: true,
+  },
+  period: {
+    type: Number,
+    required: true,
   },
   balance: {
     type: mongoose.Types.Decimal128,

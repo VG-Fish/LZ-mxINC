@@ -90,7 +90,7 @@ app.put("/updateUser", async (request, response) => {
     const requestedProduct = user.product;
     const requestedAmount = user.amount;
 
-    const userData = await UserModel.findOne({ email: user.email });
+    const userData = await UserModel.findOne({ id: user.id });
     if (!userData) {
       return response.status(404).json({ message: "User not found." });
     }
