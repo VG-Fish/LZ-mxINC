@@ -16,7 +16,6 @@ const connect = () => {
     useUnifiedTopology: true,
     dbName: "LZ-mxINC",
   });
-  new IdsModel().save();
 };
 
 connect();
