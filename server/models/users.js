@@ -7,10 +7,6 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  period: {
-    type: Number,
-    required: true,
-  },
   balance: {
     type: mongoose.Types.Decimal128,
     required: true,
@@ -23,5 +19,5 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const UserModel = mongoose.model("Users", UserSchema, "LZ-mxINC");
+const UserModel = mongoose.model("Users", UserSchema, "Users");
 module.exports = UserModel;

@@ -10,7 +10,11 @@ app.use(express.json()); // makes `request.body` work.
 app.use(cors());
 
 const connect = () => {
-  mongoose.connect(process.env.ATLAS_URI, {});
+  mongoose.connect(process.env.ATLAS_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName: "LZ-mxINC",
+  });
 };
 
 connect();
