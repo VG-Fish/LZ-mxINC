@@ -12,8 +12,6 @@ app.use(cors());
 
 const connect = () => {
   mongoose.connect(process.env.ATLAS_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
     dbName: "LZ-mxINC",
   });
 };
