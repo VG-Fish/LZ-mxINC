@@ -33,5 +33,5 @@ const IdsSchema = new mongoose.Schema({
   },
 });
 
-const IdsModel = mongoose.model("Ids", IdsSchema);
+const IdsModel = mongoose.model("Ids", IdsSchema, "Ids");
 module.exports = IdsModel;

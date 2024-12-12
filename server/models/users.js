@@ -23,5 +23,5 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const UserModel = mongoose.model("Users", UserSchema, "Users");
+const UserModel = mongoose.model("Users", UserSchema, "LZ-mxINC");
 module.exports = UserModel;
