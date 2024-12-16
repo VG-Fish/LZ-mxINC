@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios, { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 
 import products from "../../../../products_info.json";
 import logo0 from "../assets/company_logos/Airelle Logo.png";
