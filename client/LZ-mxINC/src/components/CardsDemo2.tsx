@@ -161,6 +161,7 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
               objectFit: "contain",
               transition: "height 0.3s ease", // Smooth image resize
             }}
+            loading="lazy"
           ></img>
           {expandedIndex !== null && (
             <img
@@ -173,6 +174,7 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
                 objectFit: "contain",
                 transition: "height 0.3s ease", // Smooth image resize
               }}
+              loading="lazy"
             ></img>
           )}
           <div
