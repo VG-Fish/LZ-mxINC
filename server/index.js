@@ -34,6 +34,16 @@ app.get("/getUsers", async (_, response) => {
   }
 });
 
+app.get("/getUser:id", async (request, response) => {
+  try {
+    const userId = parseInt(request.params.id, 10);
+    const user = await UserModel.find({ id: userId }).exec();
+    response.status(200).json(user.balance);
+  } catch (error) {
+    response.status(404).json({ message: "User not found" });
+  }
+});
+
 // For the `app.post()` method.
 class UserExistsError extends Error {
   constructor(message) {
