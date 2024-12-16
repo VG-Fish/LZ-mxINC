@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios, { AxiosResponse } from "axios";
 
 import products from "../../../../products_info.json";
 import logo0 from "../assets/company_logos/Airelle Logo.png";
@@ -57,12 +58,44 @@ const practice_pictures = [
   img111,
 ];
 
+interface UpdateUserApiResponse {
+  success: boolean;
+  message: string;
+  balance: {
+    $numberDecimal: number;
+  };
+}
+
 const CardsDemo = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleCardClick = (index: any) => {
     // Toggle the card expansion on click
     setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const buyItem = (index: number) => {
+    const product = products.products[index].name;
+    const amount = 1;
+    const id = localStorage.getItem("loginId");
+
+    const jsonData = JSON.stringify({
+      id: id,
+      product: product,
+      amount: amount,
+    });
+    axios
+      .put("https://lz-mxinc.onrender.com/updateUser", jsonData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response: AxiosResponse<UpdateUserApiResponse>) => {
+        const newBalance = response.data.balance.$numberDecimal;
+      })
+      .catch((_) => {
+        alert("Can't buy this product, try another one.");
+      });
   };
 
   return (
@@ -153,7 +186,12 @@ const CardsDemo = () => {
               {product.description}
             </p>
             <div className="text-center" style={{ flexShrink: 0 }}>
-              <button className="btn btn-primary">Buy</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => buyItem(index)}
+              >
+                Buy
+              </button>
             </div>
           </div>
         </div>

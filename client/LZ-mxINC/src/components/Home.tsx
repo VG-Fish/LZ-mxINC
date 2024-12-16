@@ -5,7 +5,7 @@ const Home = () => {
     <div
       className="d-flex justify-content-center align-items-center"
       style={{
-        width: "100vh",
+        width: "100vw",
         height: "100vh",
         backgroundImage: "linear-gradient(to bottom, #a2d2ff, #003049)",
       }}

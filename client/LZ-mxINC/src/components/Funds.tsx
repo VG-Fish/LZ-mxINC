@@ -16,7 +16,8 @@ const Funds = () => {
       .get(`https://lz-mxinc.onrender.com/getUserBalance:${id}`)
       .then((response: AxiosResponse<GetUserBalanceApiResponse>) => {
         setBalance(response.data.$numberDecimal);
-      });
+      })
+      .catch((_) => alert("Error getting user balance."));
   };
 
   useEffect(() => {
