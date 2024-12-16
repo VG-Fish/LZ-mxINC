@@ -5,7 +5,7 @@ const UserModel = require("./models/users");
 const IdsModel = require("./models/ids");
 const cors = require("cors");
 const productsInfo = require("../products_info.json").products;
-require("dotenv").config({ path: "./config.env" });
+require("dotenv").config({ path: "./.env" });
 
 app.use(express.json()); // makes `request.body` work.
 app.use(cors());
@@ -34,11 +34,11 @@ app.get("/getUsers", async (_, response) => {
   }
 });
 
-app.get("/getUser:id", async (request, response) => {
+app.get("/getUserBalance:id", async (request, response) => {
   try {
-    const userId = parseInt(request.params.id, 10);
+    const userId = parseInt(request.params.id.substring(1), 10);
     const user = await UserModel.find({ id: userId }).exec();
-    response.status(200).json(user.balance);
+    response.status(200).json(user[0].get("balance"));
   } catch (error) {
     response.status(404).json({ message: "User not found" });
   }
