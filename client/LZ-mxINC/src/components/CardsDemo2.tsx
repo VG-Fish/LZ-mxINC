@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import products from "../../../../products_info.json";
 import logo0 from "../assets/company_logos/Airelle Logo.png";
 import logo1 from "../assets/company_logos/Fidget Fusion Logo.png";

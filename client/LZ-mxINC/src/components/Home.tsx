@@ -1,4 +1,3 @@
-import React from "react";
 import UserInput from "./UserInput";
 
 const Home = () => {
