@@ -190,6 +190,7 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
               {product.description}
             </p>
             <div className="text-center" style={{ flexShrink: 0 }}>
+              <p>Price: {product.price}</p>
               <button
                 className="btn btn-primary"
                 onClick={() => buyItem(index)}
