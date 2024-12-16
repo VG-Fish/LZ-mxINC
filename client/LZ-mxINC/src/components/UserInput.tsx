@@ -10,7 +10,6 @@ function UserInput() {
   const [inputValue, setInputValue] = useState("");
 
   const createUser = () => {
-    console.log(inputValue);
     const id = parseInt(inputValue, 10);
     if (isNaN(id)) {
       alert("Enter a valid number.");
@@ -36,6 +35,7 @@ function UserInput() {
       .catch((error) => {
         console.error("Error:", error);
       });
+
     setInputValue("");
   };
 
