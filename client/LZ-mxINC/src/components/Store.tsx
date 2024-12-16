@@ -27,8 +27,7 @@ const Store = () => {
     <>
       <div
         style={{
-          position: "relative",
-          width: "100vw",
+          width: "100%",
           height: "100vh",
           backgroundImage: "linear-gradient(to bottom, #a2d2ff, #003049)",
           overflow: "auto",

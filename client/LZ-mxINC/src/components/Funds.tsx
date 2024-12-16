@@ -12,7 +12,12 @@ const Funds = ({ balance, setBalance }: FundsProps) => {
   return (
     <div
       className="text-end"
-      style={{ position: "fixed", top: "10px", right: "10px", zIndex: 1000 }}
+      style={{
+        position: "fixed",
+        top: "10px",
+        right: "10px",
+        zIndex: 1000,
+      }}
     >
       Funds: {balance}
     </div>
