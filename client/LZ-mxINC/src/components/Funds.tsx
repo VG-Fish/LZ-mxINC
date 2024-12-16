@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-const Funds = () => {
-  const [balance, setBalance] = useState(0);
+interface FundsProps {
+  balance: number;
+  setBalance: () => void;
+}
 
+const Funds = ({ balance, setBalance }: FundsProps) => {
   useEffect(() => {
-    getUserBalance();
-  }, [getUserBalance]);
-
+    setBalance();
+  }, [setBalance]);
   return <div className="text-end">Funds: {balance}</div>;
 };
 

@@ -66,7 +66,11 @@ interface UpdateUserApiResponse {
   };
 }
 
-const CardsDemo = () => {
+interface CardsProps {
+  updateBalance: () => void;
+}
+
+const CardsDemo = ({ updateBalance }: CardsProps) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleCardClick = (index: any) => {
@@ -90,8 +94,8 @@ const CardsDemo = () => {
           "Content-Type": "application/json",
         },
       })
-      .then((response: AxiosResponse<UpdateUserApiResponse>) => {
-        const newBalance = response.data.balance.$numberDecimal;
+      .then((_: AxiosResponse<UpdateUserApiResponse>) => {
+        updateBalance();
       })
       .catch((_) => {
         alert("Can't buy this product, try another one.");
