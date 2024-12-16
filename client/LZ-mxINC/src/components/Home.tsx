@@ -7,7 +7,7 @@ const Home = () => {
       style={{
         width: "100vw",
         height: "100vh",
-        backgroundImage: "linear-gradient(to bottom, #a2d2ff, #003049)",
+        backgroundImage: "radial-gradient(circle at center, #a2d2ff, #003049)",
       }}
     >
       <div className="text-center">

@@ -102,6 +102,10 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
       });
   };
 
+  const getAmountAvailable = () => {
+    return 0;
+  };
+
   return (
     <div>
       {/* Overlay when a card is expanded */}
@@ -114,7 +118,7 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent overlay
+            backgroundColor: "rgba(0, 0, 0, 0.8)", // Semi-transparent overlay
             zIndex: 999, // Ensures overlay is on top
           }}
           onClick={() => setExpandedIndex(null)} // Close the card when clicking outside
@@ -190,7 +194,11 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
               {product.description}
             </p>
             <div className="text-center" style={{ flexShrink: 0 }}>
-              <p>Price: {product.price}</p>
+              <p>
+                Price: {product.price}
+                <br />
+                Amount Available: {getAmountAvailable()}
+              </p>
               <button
                 className="btn btn-primary"
                 onClick={() => buyItem(index)}
