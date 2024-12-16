@@ -25,8 +25,18 @@ const Store = () => {
 
   return (
     <>
-      <Funds balance={balance} setBalance={setUserBalance}></Funds>
-      <CardsDemo2 updateBalance={setUserBalance}></CardsDemo2>
+      <div
+        style={{
+          position: "relative",
+          width: "100vw",
+          height: "100vh",
+          backgroundImage: "linear-gradient(to bottom, #a2d2ff, #003049)",
+          overflow: "auto",
+        }}
+      >
+        <Funds balance={balance} setBalance={setUserBalance}></Funds>
+        <CardsDemo2 updateBalance={setUserBalance}></CardsDemo2>
+      </div>
     </>
   );
 };
