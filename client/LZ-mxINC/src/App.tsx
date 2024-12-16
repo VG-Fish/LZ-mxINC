@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Store from "./components/Store";
 import "bootstrap/dist/css/bootstrap.css";
+import Home from "./components/Home";
 
 const App = () => {
   const navigator = useNavigate();
@@ -32,11 +33,7 @@ const App = () => {
 
   return (
     <>
-      <div className="text-center">
-        Welcome to <b>LZ-mxINC</b>
-        <br></br>
-        Please sign in below
-      </div>
+      <Home></Home>
       {loginErrored && <div>{errorMessage}</div>}
       <div className="d-flex justify-content-center align-items-center">
         <div style={{ width: "300px" }}>
