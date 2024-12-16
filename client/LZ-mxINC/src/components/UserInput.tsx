@@ -25,7 +25,6 @@ function UserInput() {
       alert("Enter a valid number.");
     }
 
-    // TODO: Fix period
     const data = { id: id, period: 1 };
     const jsonData = JSON.stringify(data);
     axios
@@ -43,7 +42,25 @@ function UserInput() {
         navigate("/store");
       })
       .catch((_) => {
-        alert("Error creating user, try entering a valid id.");
+        const data = { id: id, period: 2 };
+        const jsonData = JSON.stringify(data);
+        axios
+          .post<CreateUserApiResponse>(
+            "https://lz-mxinc.onrender.com/createUser",
+            jsonData,
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
+          .then((response: AxiosResponse<CreateUserApiResponse>) => {
+            localStorage.setItem("loginId", String(response.data.id));
+            navigate("/store");
+          })
+          .catch((_) => {
+            alert("Error creating user, try entering a valid id.");
+          });
       });
 
     setInputValue("");
