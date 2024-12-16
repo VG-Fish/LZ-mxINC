@@ -101,6 +101,10 @@ const videos = [
   vid_supply,
 ];
 
+interface CardsProps {
+  updateBalance: () => void;
+}
+
 const CardsDemo2 = ({ updateBalance }: CardsProps) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 

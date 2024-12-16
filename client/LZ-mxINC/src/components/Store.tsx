@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useState } from "react";
 import CardsDemo2 from "./CardsDemo2";
 import Funds from "./Funds";
 import axios, { AxiosResponse } from "axios";
@@ -12,10 +13,15 @@ interface GetUserBalanceApiResponse {
 const Store = () => {
   const [balance, setBalance] = useState(0);
   const setUserBalance = () => {
+  const [balance, setBalance] = useState(0);
+  const setUserBalance = () => {
     const id = localStorage.getItem("loginId");
     axios
       .get(`https://lz-mxinc.onrender.com/getUserBalance:${id}`)
       .then((response: AxiosResponse<GetUserBalanceApiResponse>) => {
+        setBalance(
+          Number(parseFloat(String(response.data.$numberDecimal)).toFixed(2))
+        );
         setBalance(
           Number(parseFloat(String(response.data.$numberDecimal)).toFixed(2))
         );
