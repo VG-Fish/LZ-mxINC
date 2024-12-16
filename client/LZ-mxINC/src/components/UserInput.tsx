@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
+import { useNavigate } from "react-router-dom";
 
 interface CreateUserApiResponse {
   success: boolean;
   message: string;
+  id: number;
+  period: number;
 }
 
 function UserInput() {
   const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("loginId")) {
+      navigate("/store");
+    }
+  }, [navigate]);
 
   const createUser = () => {
     const id = parseInt(inputValue, 10);
@@ -15,6 +25,7 @@ function UserInput() {
       alert("Enter a valid number.");
     }
 
+    // TODO: Fix period
     const data = { id: id, period: 1 };
     const jsonData = JSON.stringify(data);
     axios
@@ -28,12 +39,11 @@ function UserInput() {
         }
       )
       .then((response: AxiosResponse<CreateUserApiResponse>) => {
-        console.log(response.data.success);
-        console.log(response.data.message);
-        console.log(response.data);
+        localStorage.setItem("loginId", String(response.data.id));
+        navigate("/store");
       })
-      .catch((error) => {
-        console.error("Error:", error);
+      .catch((_) => {
+        alert("Error creating user, try entering a valid id.");
       });
 
     setInputValue("");
