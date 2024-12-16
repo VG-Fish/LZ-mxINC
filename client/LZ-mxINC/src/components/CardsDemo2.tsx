@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import products from "../../../../products_info.json";
 import logo0 from "../assets/company_logos/Airelle Logo.png";
 import logo1 from "../assets/company_logos/Fidget Fusion Logo.png";
@@ -12,6 +13,7 @@ import logo8 from "../assets/company_logos/Fidget Frank Logo.png";
 import logo9 from "../assets/company_logos/The Unsnagger Logo.png";
 import logo10 from "../assets/company_logos/The Easy Attach Logo.png";
 import logo11 from "../assets/company_logos/The Senko Saver Logo.png";
+
 const logos = [
   logo0,
   logo1,
@@ -26,37 +28,20 @@ const logos = [
   logo10,
   logo11,
 ];
+
 import img01 from "../assets/company_pictures/Airelle 1.png";
-import img02 from "../assets/company_pictures/Airelle 2.png";
 import img11 from "../assets/company_pictures/Fidget Fusion 1.png";
-import img12 from "../assets/company_pictures/Fidget Fusion 2.png";
 import img21 from "../assets/company_pictures/Hold20 1.png";
-import img22 from "../assets/company_pictures/Hold20 2.png";
 import img31 from "../assets/company_pictures/Lanyard Link 1.png";
 import img41 from "../assets/company_pictures/The Bye-Bye Bait 1.png";
 import img51 from "../assets/company_pictures/The Homework Pin 1.png";
-import img52 from "../assets/company_pictures/The Homework Pin 2.png";
 import img61 from "../assets/company_pictures/Sport Stuff Storage 1.png";
 import img71 from "../assets/company_pictures/The Calming Cube 1.png";
 import img81 from "../assets/company_pictures/Fidget Frank 1.png";
 import img91 from "../assets/company_pictures/The Unsnagger 1.png";
-import img92 from "../assets/company_pictures/The Unsnagger 2.png";
 import img101 from "../assets/company_pictures/The Easy Attach 1.png";
 import img111 from "../assets/company_pictures/The Senko Saver 1.png";
-const pictures = [
-  [img01, img02],
-  [img11, img12],
-  [img21, img22],
-  [img31],
-  [img41],
-  [img51, img52],
-  [img61],
-  [img71],
-  [img81],
-  [img91, img92],
-  [img101],
-  [img111],
-];
+
 const practice_pictures = [
   img01,
   img11,
