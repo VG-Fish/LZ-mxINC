@@ -73,18 +73,18 @@ interface UpdateUserApiResponse {
 interface CardsProps {
   updateBalance: () => void;
 }
-import vid_fidget from "../assets/company_videos/AFidget Frank .mov";
-import vid_air from "../assets/company_videos/AirElle.mp4";
+import vid_fidget from "../assets/company_videos/AFidget Frank.webm";
+import vid_air from "../assets/company_videos/AirElle.webm";
 import vid_bye from "../assets/company_videos/ByeByeBait.webm";
-import vid_snag from "../assets/company_videos/desnagger.mp4";
-import vid_attach from "../assets/company_videos/Easy attach advertisement.mp4";
-import vid_fusion from "../assets/company_videos/Fidget fusion is designed to help you focus in class.mp4";
-import vid_hol from "../assets/company_videos/Hol20.mov";
-import vid_lanyard from "../assets/company_videos/Lanyard Link Comercial.mov";
-import vid_sports from "../assets/company_videos/SportsStuffStorage.mov";
-import vid_supply from "../assets/company_videos/Supply Saver… Save your locker!.mp4";
-import vid_cube from "../assets/company_videos/The Calming Cube.mov";
-import vid_pin from "../assets/company_videos/THE HOMEWORK PIN.mp4";
+import vid_snag from "../assets/company_videos/desnagger.webm";
+import vid_attach from "../assets/company_videos/Easy attach advertisement.webm";
+import vid_fusion from "../assets/company_videos/Fidget fusion is designed to help you focus in class.webm";
+import vid_hol from "../assets/company_videos/Hol20.webm";
+import vid_lanyard from "../assets/company_videos/Lanyard Link Comercial.webm";
+import vid_sports from "../assets/company_videos/SportsStuffStorage.webm";
+import vid_supply from "../assets/company_videos/Supply Saver… Save your locker!.webm";
+import vid_cube from "../assets/company_videos/The Calming Cube.webm";
+import vid_pin from "../assets/company_videos/THE HOMEWORK PIN.webm";
 const videos = [
   vid_air,
   vid_fusion,
