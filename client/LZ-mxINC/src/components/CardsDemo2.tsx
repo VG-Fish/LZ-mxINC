@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 
 import products from "../../../../products_info.json";
@@ -109,6 +109,10 @@ const CardsDemo2 = ({
   updateProductAmountAvailable,
 }: CardsProps) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
+
+  useEffect(() => {
+    updateProductAmountAvailable();
+  }, [updateProductAmountAvailable]);
 
   const handleCardClick = (index: any) => {
     // Toggle the card expansion on click
@@ -246,12 +250,20 @@ const CardsDemo2 = ({
                 <br />
                 Amount Available: {productAmountAvailable[index]}
               </p>
-              <button
-                className="btn btn-primary"
-                onClick={() => buyItem(index)}
-              >
-                Buy
-              </button>
+              {expandedIndex === index && (
+                <button
+                  className={
+                    productAmountAvailable[index] !== 0
+                      ? "btn btn-primary"
+                      : "btn btn-secondary"
+                  }
+                  onClick={() => {
+                    productAmountAvailable[index] !== 0 && buyItem(index);
+                  }}
+                >
+                  Buy
+                </button>
+              )}
             </div>
           </div>
         </div>

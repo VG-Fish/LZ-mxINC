@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CardsDemo2 from "./CardsDemo2";
 import Funds from "./Funds";
 import axios, { AxiosResponse } from "axios";
@@ -44,10 +44,6 @@ const Store = () => {
       .catch((_) => alert("Error getting user balance."));
     return productAmountAvailable;
   };
-
-  useEffect(() => {
-    getAmountAvailable();
-  }, [getAmountAvailable]);
 
   return (
     <>
