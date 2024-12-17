@@ -154,7 +154,6 @@ const CardsDemo2 = ({
         minHeight: "100vh",
         padding: "20px",
         boxSizing: "border-box",
-        marginTop: "5px",
       }}
     >
       {/* Overlay when a card is expanded */}

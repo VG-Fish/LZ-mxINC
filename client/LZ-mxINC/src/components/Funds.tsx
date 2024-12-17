@@ -12,15 +12,27 @@ const Funds = ({ balance, setBalance }: FundsProps) => {
 
   return (
     <div
-      className="text-end"
       style={{
         position: "fixed",
-        top: "10px",
-        right: "10px",
         zIndex: 1000,
+        width: "100%",
+        backgroundColor: "#f5ebe0",
+        alignItems: "center",
       }}
     >
-      Funds: {balance}
+      <img src="public/lz95_logo.jpg" width="30px" height="30px"></img>
+      <strong> LZ-mxINC</strong>
+      <div
+        className="text-end"
+        style={{
+          position: "fixed",
+          right: "10px",
+          top: "0px",
+          zIndex: 1000,
+        }}
+      >
+        Funds: {balance}
+      </div>
     </div>
   );
 };
