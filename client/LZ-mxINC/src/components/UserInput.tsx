@@ -14,8 +14,13 @@ function UserInput() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem("loginId")) {
-      navigate("/store");
+    if (localStorage.getItem("clearedCache") === null) {
+      localStorage.removeItem("loginId");
+      localStorage.setItem("clearedCache", "true");
+    } else {
+      if (localStorage.getItem("loginId")) {
+        navigate("/store");
+      }
     }
   }, [navigate]);
 
