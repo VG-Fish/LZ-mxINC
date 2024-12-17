@@ -9,6 +9,7 @@ const Funds = ({ balance, setBalance }: FundsProps) => {
   useEffect(() => {
     setBalance();
   }, [setBalance]);
+
   return (
     <div
       className="text-end"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 
 import products from "../../../../products_info.json";
@@ -72,6 +72,8 @@ interface UpdateUserApiResponse {
 
 interface CardsProps {
   updateBalance: () => void;
+  updateProductAmountAvailable: () => void;
+  productAmountAvailable: [number];
 }
 
 import vid_fidget from "../assets/company_videos/AFidget Frank.webm";
@@ -101,7 +103,15 @@ const videos = [
   vid_supply,
 ];
 
-const CardsDemo2 = ({ updateBalance }: CardsProps) => {
+const CardsDemo2 = ({
+  productAmountAvailable,
+  updateBalance,
+  updateProductAmountAvailable,
+}: CardsProps) => {
+  useEffect(() => {
+    updateProductAmountAvailable();
+  }, [updateProductAmountAvailable]);
+
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleCardClick = (index: any) => {
@@ -131,10 +141,6 @@ const CardsDemo2 = ({ updateBalance }: CardsProps) => {
       .catch((_) => {
         alert("Can't buy this product, try another one.");
       });
-  };
-
-  const getAmountAvailable = () => {
-    return 0;
   };
 
   return (
@@ -242,7 +248,7 @@ const CardsDemo2 = ({ updateBalance }: CardsProps) => {
               <p>
                 Price: {product.price}
                 <br />
-                Amount Available: {getAmountAvailable()}
+                Amount Available: {productAmountAvailable[index]}
               </p>
               <button
                 className="btn btn-primary"
