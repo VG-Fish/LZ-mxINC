@@ -4,12 +4,6 @@ interface FundsProps {
   balance: number;
   setBalance: () => void;
 }
-import { useEffect } from "react";
-
-interface FundsProps {
-  balance: number;
-  setBalance: () => void;
-}
 
 const Funds = ({ balance, setBalance }: FundsProps) => {
   useEffect(() => {

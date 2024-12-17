@@ -73,6 +73,7 @@ interface UpdateUserApiResponse {
 interface CardsProps {
   updateBalance: () => void;
 }
+
 import vid_fidget from "../assets/company_videos/AFidget Frank.webm";
 import vid_air from "../assets/company_videos/AirElle.webm";
 import vid_bye from "../assets/company_videos/ByeByeBait.webm";
@@ -99,10 +100,6 @@ const videos = [
   vid_attach,
   vid_supply,
 ];
-
-interface CardsProps {
-  updateBalance: () => void;
-}
 
 const CardsDemo2 = ({ updateBalance }: CardsProps) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
