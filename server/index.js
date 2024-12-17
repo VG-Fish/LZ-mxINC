@@ -14,7 +14,7 @@ const connect = () => {
   mongoose.connect(process.env.ATLAS_URI, {
     dbName: "LZ-mxINC",
   });
-  IdsModel.save();
+  new IdsModel().save();
 };
 
 connect();
