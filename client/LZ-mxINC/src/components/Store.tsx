@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardsDemo2 from "./CardsDemo2";
 import Funds from "./Funds";
 import axios, { AxiosResponse } from "axios";
@@ -37,13 +37,17 @@ const Store = () => {
   const getAmountAvailable = () => {
     const id = localStorage.getItem("loginId");
     axios
-      .get(`https://lz-mxinc.onrender.com/getUserBalance:${id}`)
+      .get(`https://lz-mxinc.onrender.com/getUserProductsAvailable:${id}`)
       .then((response: AxiosResponse<GetUserAmountAvailableApiResponse>) => {
         setProductAmountAvailable(response.data.inventory);
       })
       .catch((_) => alert("Error getting user balance."));
     return productAmountAvailable;
   };
+
+  useEffect(() => {
+    getAmountAvailable();
+  }, [getAmountAvailable]);
 
   return (
     <>

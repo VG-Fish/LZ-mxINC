@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios, { AxiosResponse } from "axios";
 
 import products from "../../../../products_info.json";
@@ -108,10 +108,6 @@ const CardsDemo2 = ({
   updateBalance,
   updateProductAmountAvailable,
 }: CardsProps) => {
-  useEffect(() => {
-    updateProductAmountAvailable();
-  }, [updateProductAmountAvailable]);
-
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleCardClick = (index: any) => {

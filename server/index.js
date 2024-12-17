@@ -48,7 +48,7 @@ app.get("/getUserProductsAvailable:id", async (request, response) => {
   try {
     const userId = parseInt(request.params.id.substring(1), 10);
     const user = await UserModel.find({ id: userId }).exec();
-    response.status(200).json(user[0].get("inventory"));
+    response.status(200).json({ inventory: user[0].get("inventory") });
   } catch (error) {
     response.status(404).json({ message: "User not found" });
   }
