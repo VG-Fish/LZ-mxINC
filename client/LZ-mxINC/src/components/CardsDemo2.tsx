@@ -144,7 +144,19 @@ const CardsDemo2 = ({
   };
 
   return (
-    <div style={{}}>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+        gap: "20px",
+        justifyItems: "center",
+        alignContent: "center",
+        minHeight: "100vh",
+        padding: "20px",
+        boxSizing: "border-box",
+        marginTop: "5px",
+      }}
+    >
       {/* Overlay when a card is expanded */}
       {expandedIndex !== null && (
         <div
@@ -180,7 +192,6 @@ const CardsDemo2 = ({
             transform:
               expandedIndex === index ? "translate(-50%, -50%)" : "none", // Centering transform
             zIndex: expandedIndex === index ? 1000 : "auto", // Ensure the expanded card is above other elements
-            flexWrap: "wrap",
           }}
           onClick={() => handleCardClick(index)}
         >
