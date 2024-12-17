@@ -20,8 +20,8 @@ const Funds = ({ balance, setBalance }: FundsProps) => {
         alignItems: "center",
       }}
     >
-      <img src="public/lz95_logo.jpg" width="30px" height="30px"></img>
-      <strong> LZ-mxINC</strong>
+      <img src="/lz95_logo.jpg" width="30px" height="30px"></img>
+      <strong style={{ marginLeft: "10px" }}>LZ-mxINC</strong>
       <div
         className="text-end"
         style={{
