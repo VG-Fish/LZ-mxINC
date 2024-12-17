@@ -209,9 +209,10 @@ const CardsDemo2 = ({ updateBalance }: CardsProps) => {
               width="100%"
               height="25%"
               controls
+              preload="none"
               style={{ marginTop: "10px" }}
             >
-              <source src={videos[index]} type="video/mp4"></source>
+              <source src={videos[index]} type="video/webm"></source>
             </video>
           )}
           <div
