@@ -73,8 +73,34 @@ interface UpdateUserApiResponse {
 interface CardsProps {
   updateBalance: () => void;
 }
+import vid_fidget from "../assets/company_videos/AFidget Frank .mov";
+import vid_air from "../assets/company_videos/AirElle.mp4";
+import vid_bye from "../assets/company_videos/ByeByeBait.webm";
+import vid_snag from "../assets/company_videos/desnagger.mp4";
+import vid_attach from "../assets/company_videos/Easy attach advertisement.mp4";
+import vid_fusion from "../assets/company_videos/Fidget fusion is designed to help you focus in class.mp4";
+import vid_hol from "../assets/company_videos/Hol20.mov";
+import vid_lanyard from "../assets/company_videos/Lanyard Link Comercial.mov";
+import vid_sports from "../assets/company_videos/SportsStuffStorage.mov";
+import vid_supply from "../assets/company_videos/Supply Saver… Save your locker!.mp4";
+import vid_cube from "../assets/company_videos/The Calming Cube.mov";
+import vid_pin from "../assets/company_videos/THE HOMEWORK PIN.mp4";
+const videos = [
+  vid_air,
+  vid_fusion,
+  vid_hol,
+  vid_lanyard,
+  vid_bye,
+  vid_pin,
+  vid_sports,
+  vid_cube,
+  vid_fidget,
+  vid_snag,
+  vid_attach,
+  vid_supply,
+];
 
-const CardsDemo = ({ updateBalance }: CardsProps) => {
+const CardsDemo2 = ({ updateBalance }: CardsProps) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleCardClick = (index: any) => {
@@ -157,25 +183,35 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
             alt="..."
             style={{
               width: expandedIndex === index ? "50%" : "100%",
-              height: "50%",
+              height: expandedIndex === index ? "25%" : "50%",
               objectFit: "contain",
               transition: "height 0.3s ease", // Smooth image resize
             }}
             loading="lazy"
           ></img>
-          {expandedIndex !== null && (
+          {expandedIndex === index && (
             <img
               src={practice_pictures[index]}
               className="card-img-top"
               alt="..."
               style={{
                 width: "50%",
-                height: "50%",
+                height: "25%",
                 objectFit: "contain",
                 transition: "height 0.3s ease", // Smooth image resize
               }}
               loading="lazy"
             ></img>
+          )}
+          {expandedIndex === index && (
+            <video
+              width="100%"
+              height="25%"
+              controls
+              style={{ marginTop: "10px" }}
+            >
+              <source src={videos[index]} type="video/mp4"></source>
+            </video>
           )}
           <div
             className="card-body d-flex flex-column"
@@ -193,7 +229,7 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
             <p
               className="card-text text-center"
               style={{
-                flex: "1",
+                height: "150px",
                 overflow: "auto",
                 margin: "0",
               }}
@@ -220,4 +256,4 @@ const CardsDemo = ({ updateBalance }: CardsProps) => {
   );
 };
 
-export default CardsDemo;
+export default CardsDemo2;
