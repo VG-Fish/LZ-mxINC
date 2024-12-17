@@ -245,7 +245,7 @@ const CardsDemo2 = ({
               {product.description}
             </p>
             <div className="text-center" style={{ flexShrink: 0 }}>
-              <p>
+              <p style={{ color: "#219ebc" }}>
                 Price: {product.price}
                 <br />
                 Amount Available: {productAmountAvailable[index]}
