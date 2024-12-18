@@ -34,7 +34,7 @@ const Store = () => {
   };
 
   const [productAmountAvailable, setProductAmountAvailable] = useState(
-    Array(products.products.length) as [number]
+    Array(products.products.length).fill(0) as [number]
   );
 
   const getAmountAvailable = () => {
