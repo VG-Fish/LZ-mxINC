@@ -143,6 +143,10 @@ const CardsDemo2 = ({
       });
   };
 
+  const handleVideoClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
     <div
       style={{
@@ -182,7 +186,7 @@ const CardsDemo2 = ({
           }`}
           style={{
             width: expandedIndex === index ? "500px" : "300px", // Expanded width
-            height: expandedIndex === index ? "600px" : "500px", // Expanded height
+            height: expandedIndex === index ? "650px" : "500px", // Expanded height
             margin: "8px",
             transition: "width 0.3s ease, height 0.3s ease", // Smooth transition
             cursor: "pointer", // Indicate that the card is clickable
@@ -223,11 +227,13 @@ const CardsDemo2 = ({
           )}
           {expandedIndex === index && (
             <video
+              playsInline
               width="100%"
               height="25%"
               controls
               preload="none"
               style={{ marginTop: "10px" }}
+              onClick={handleVideoClick}
             >
               <source src={videos[index]} type="video/webm"></source>
             </video>

@@ -28,6 +28,7 @@ function UserInput() {
     const id = parseInt(inputValue, 10);
     if (isNaN(id)) {
       alert("Enter a valid number.");
+      return;
     }
 
     const data = { id: id, period: 1 };
