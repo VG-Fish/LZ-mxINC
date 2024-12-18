@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -12,12 +12,6 @@ interface CreateUserApiResponse {
 function UserInput() {
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (localStorage.getItem("loginId")) {
-      navigate("/store");
-    }
-  }, [navigate]);
 
   const createUser = () => {
     const id = parseInt(inputValue, 10);

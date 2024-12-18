@@ -1,6 +1,15 @@
+import { useEffect } from "react";
 import UserInput from "./UserInput";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("loginId")) {
+      navigate("/store");
+    }
+  }, [navigate]);
+
   return (
     <div
       className="d-flex justify-content-center align-items-center"
