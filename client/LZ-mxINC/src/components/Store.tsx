@@ -27,7 +27,10 @@ const Store = () => {
           Number(parseFloat(String(response.data.$numberDecimal)).toFixed(2))
         );
       })
-      .catch((_) => alert("Error getting user balance."));
+      .catch((_) => {
+        alert("Error getting user balance.");
+        localStorage.removeItem("loginId");
+      });
   };
 
   const [productAmountAvailable, setProductAmountAvailable] = useState(
@@ -41,7 +44,10 @@ const Store = () => {
       .then((response: AxiosResponse<GetUserAmountAvailableApiResponse>) => {
         setProductAmountAvailable(response.data.inventory);
       })
-      .catch((_) => alert("Error getting user balance."));
+      .catch((_) => {
+        alert("Error getting user balance.");
+        localStorage.removeItem("loginId");
+      });
     return productAmountAvailable;
   };
 

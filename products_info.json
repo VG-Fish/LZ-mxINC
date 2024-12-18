@@ -106,12 +106,12 @@
       "amount_available_to_individual": 10
     },
     {
-      "name": "The Space Saver",
-      "description": "N/A",
-      "logo_path": "",
-      "photos_paths": [],
-      "price": 0,
-      "amount_available_to_individual": 0
+      "name": "The Supplies Saver",
+      "description": "Our product is a supply box that can fit all of the supplies you need. It is customizable and measured to fit your supply needs. They come in different sizes.",
+      "logo_path": "../assets/company_logos/The Supplies Saver Logo.png",
+      "photos_paths": ["../assets/company_logos/The Supplies Saver 1.png"],
+      "price": 5.99,
+      "amount_available_to_individual": 3
     }
   ]
 }

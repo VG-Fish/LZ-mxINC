@@ -14,7 +14,7 @@ import logo8 from "../assets/company_logos/Fidget Frank Logo.png";
 import logo9 from "../assets/company_logos/The Unsnagger Logo.png";
 import logo10 from "../assets/company_logos/The Easy Attach Logo.png";
 import logo11 from "../assets/company_logos/The Senko Saver Logo.png";
-import logo12 from "../assets/company_logos/The Senko Saver Logo.png";
+import logo13 from "../assets/company_logos/The Supplies Saver Logo.png";
 
 const logos = [
   logo0,
@@ -29,7 +29,7 @@ const logos = [
   logo9,
   logo10,
   logo11,
-  logo12,
+  logo13,
 ];
 
 import img01 from "../assets/company_pictures/Airelle 1.png";
@@ -44,7 +44,7 @@ import img81 from "../assets/company_pictures/Fidget Frank 1.png";
 import img91 from "../assets/company_pictures/The Unsnagger 1.png";
 import img101 from "../assets/company_pictures/The Easy Attach 1.png";
 import img111 from "../assets/company_pictures/The Senko Saver 1.png";
-import img121 from "../assets/company_pictures/The Senko Saver 1.png";
+import img131 from "../assets/company_pictures/The Supplies Saver 1.png";
 
 const practice_pictures = [
   img01,
@@ -59,7 +59,7 @@ const practice_pictures = [
   img91,
   img101,
   img111,
-  img121,
+  img131,
 ];
 
 interface UpdateUserApiResponse {
